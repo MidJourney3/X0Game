@@ -13,16 +13,16 @@ def take_input(player_token):
         try:
             player_answer = int(player_answer)
         except:
-            print ("Некорректный ввод. Вы уверены, что ввели число?")
+            print ("Неправильный ввод. Вы уверены, что ввели число?")
             continue
         if player_answer >= 1 and player_answer <= 9:
             if (str(board[player_answer-1]) not in "XO"):
                 board[player_answer-1] = player_token
                 valid = True
             else:
-                print ("Эта клеточка уже занята")
+                print ("Эта клетка уже занята")
         else:
-            print ("Некорректный ввод. Введите число от 1 до 9 чтобы походить.")
+            print ("Неправильный ввод. Введите число от 1 до 9 чтобы походить.")
 
 def check_win(board):
     win_coord = ((0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6))
@@ -44,11 +44,11 @@ def main(board):
         if counter > 4:
             tmp = check_win(board)
             if tmp:
-                print (tmp, "выиграл!")
+                print (tmp, "Победа")
                 win = True
                 break
         if counter == 9:
-            print ("Ничья!")
+            print ("Ничья")
             break
     draw_board(board)
 
